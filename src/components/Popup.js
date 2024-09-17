@@ -1,9 +1,7 @@
-// src/components/PopupDialog.js
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import axios from 'axios';
 
-// Options for the dropdown
 const schemaOptions = [
   { label: 'First Name', value: 'first_name' },
   { label: 'Last Name', value: 'last_name' },
@@ -29,7 +27,8 @@ const PopupDialog = ({ open, onClose, onSave }) => {
     console.log('Saving segment data:', data);
 
     try {
-      await axios.post('https://webhook.site/fa1c739c-a4aa-4af6-b598-f5f494de5a7f', data, {
+      await axios.post('https://webhook.site/fa1c739c-a4aa-4af6-b598-f5f494de5a7f',
+         data, {
         headers: {
           'Content-Type': 'application/json'
         }

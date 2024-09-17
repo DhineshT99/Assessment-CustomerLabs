@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import PopupDialog from './components/Popup';
@@ -6,7 +5,7 @@ import PopupDialog from './components/Popup';
 const App = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [schemas, setSchemas] = useState([]);
-  const [segmentName, setSegmentName] = useState('');
+  const [segmentName, setSegmentName] = useState(null);
 
   const schemaOptions = [
     { label: 'First Name', value: 'first_name' },
@@ -32,8 +31,9 @@ const App = () => {
     });
 
     try {
-      fetch('https://webhook.site/fa1c739c-a4aa-4af6-b598-f5f494de5a7f', {
-        method: 'POST',
+      fetch('https://webhook.site/fa1c739c-a4aa-4af6-b598-f5f494de5a7f', //webhooks GET API
+         {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
